@@ -15,7 +15,7 @@ COPY . .
 RUN rm -rf src/.scala-build src/.bsp src/.bloop
 
 RUN npm install 
-RUN npm run buildScalajsRelease
+RUN npm run buildScalajs
 RUN npm run build
 
 FROM nginx

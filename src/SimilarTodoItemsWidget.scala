@@ -6,6 +6,7 @@ def SimilarTodoItemsWidget(
 ) =
   ul(
     cls := "grid grid-cols-1 gap-2",
+    p("Similar todo notes:"),
     children <-- state
       .combineWith(draft)
       .mapN:

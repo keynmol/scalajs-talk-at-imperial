@@ -6,6 +6,8 @@ def TodoItemForm(
     savedTitle: String = ""
 ) =
   val draft = Var(SaveState.restoreDraft())
+  val summary = TodoSummaryChart(state.signal)
+  val similar = SimilarTodoItemsWidget(state.signal, draft.signal)
 
   div(
     cls := "grid grid-cols-2 gap-2",
@@ -55,7 +57,9 @@ def TodoItemForm(
     ),
     div(
       cls := "my-4",
-      p("Similar todo notes:"),
-      SimilarTodoItemsWidget(state.signal, draft.signal)
+      child <-- draft.signal.map(draft =>
+        if draft.isEmpty then summary
+        else similar
+      )
     )
   )
