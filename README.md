@@ -1,11 +1,18 @@
 # Scala.js application
 
+<!--toc:start-->
+- [Scala.js application](#scalajs-application)
+  - [V1](#v1)
+  - [V2](#v2)
+  - [V3](#v3)
+<!--toc:end-->
+
 This is a simple Scala.js application that I created as supporting material 
 for a presentation at [Imperial College London](https://www.imperial.ac.uk/). 
 
 Main purpose of presentation was introducing Scala.js and Laminar (see below), showcasing interop features with JavaScript libraries and briefly touching upon packaging and deployment. Final version of an application uses browser storage for data, but has a JVM backend that invokes OpenAI API to generate titles from descriptions. 
 
-[**Live version**](https://scalajs-talk-at-imperial.fly.dev/).
+[**Live version**](https://scalajs-talk-at-imperial.fly.dev/)
 
 The final app is built on these languages, technologies, and frameworks:
 
@@ -26,6 +33,8 @@ The authors behind those tools and libraries walked so I could at least crawl, I
 
 ## V1
 
+[Code](https://github.com/keynmol/scalajs-talk-at-imperial/commit/5463474bc81b8b849375fed1ffb89437c0c16672)
+
 This version only has the basic frontend functionality, and is a pure Scala.js frontend. The Dockerfile that deploys it just creates a container that serves static content build by Vite.
 
 
@@ -33,11 +42,15 @@ This version only has the basic frontend functionality, and is a pure Scala.js f
 
 ## V2
 
+[Code](https://github.com/keynmol/scalajs-talk-at-imperial/commit/46d5b1b5c6b6325fd34c99bd9cbb01dddff74991)
+
 This version is same as V1, but adds an integration with Apache ECharts – a library for charts and plotting. It's a good example to showcase very basic interop with JS libraries. Deployment is the same as V1 – it's still a frontend-only application.
 
 ![CleanShot 2024-05-18 at 12 57 54](https://github.com/keynmol/scalajs-talk-at-imperial/assets/1052965/2b2dbdc3-dc7d-43e9-9b1a-90371c6afa24)
 
 ## V3
+
+[Code](https://github.com/keynmol/scalajs-talk-at-imperial/commit/c25a7bfa563fab0902c44a905c9da04c85903efe) | [**Live version**](https://scalajs-talk-at-imperial.fly.dev/)
 
 The most involved version, builds upon V2 and adds a JVM backend (using Cask) which exposes an endpoint that generates a title for a description using OpenAI API. The app is packaged as a self-contained JAR file, which serves Vite's bundle and exposes the API at the same time.
 
