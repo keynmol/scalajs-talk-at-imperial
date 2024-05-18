@@ -1,13 +1,17 @@
 import com.raquo.laminar.api.L.*
+import com.raquo.airstream.state.Var
+import org.scalajs.dom.FormData
 
 def TodoItemForm(
     state: Var[AppState],
     savedDescription: String = "",
     savedTitle: String = ""
 ) =
-  val draft = Var(SaveState.restoreDraft())
+  val draft: Var[TodoDraft] = Var(SaveState.restoreDraft())
   val summary = TodoSummaryChart(state.signal)
   val similar = SimilarTodoItemsWidget(state.signal, draft.signal)
+
+  val bus = EventBus[String]()
 
   div(
     cls := "grid grid-cols-2 gap-2",
@@ -32,6 +36,18 @@ def TodoItemForm(
         ),
         value <-- draft.signal.map(_.description)
       ),
+      button(
+        "💫🪄 Use AI magic to fill title 🪄💫",
+        cls := "bg-indigo-400 text-xl border-2 border-white p-4 text-white",
+        onClick.preventDefault.mapTo(draft.now().description) --> bus.toObserver
+      ),
+      bus.events.flatMapSwitch { description =>
+        val data = FormData()
+        data.append("description", draft.now().description)
+
+        FetchStream.post("/create-title", _.body(data))
+
+      } --> draft.updater[String]((cur, value) => cur.copy(title = value)),
       onSubmit.mapToUnit --> { _ =>
         val itemTitle = draft.now().title.trim()
         val itemDescription = draft.now().description.trim()

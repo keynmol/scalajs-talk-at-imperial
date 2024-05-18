@@ -1,6 +1,8 @@
-.scala-build
-.bsp
+**/.scala-build
+**/.bsp
 *.class
 .bloop
 .metals
 .vscode
+Dockerfile
+fly.toml
