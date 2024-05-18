@@ -20,3 +20,17 @@ The final app is built on these languages, technologies, and frameworks:
 
 The authors behind those tools and libraries walked so I could at least crawl.
 
+## V1
+
+
+![CleanShot 2024-05-18 at 12 56 27](https://github.com/keynmol/scalajs-talk-at-imperial/assets/1052965/7f623a41-9d89-4133-9adb-ef0ee3bae8c2)
+
+
+## V2
+
+![CleanShot 2024-05-18 at 12 57 54](https://github.com/keynmol/scalajs-talk-at-imperial/assets/1052965/2b2dbdc3-dc7d-43e9-9b1a-90371c6afa24)
+
+
+## V3
+
+![CleanShot 2024-05-18 at 13 00 02](https://github.com/keynmol/scalajs-talk-at-imperial/assets/1052965/cfd0d8bf-3392-4663-8608-44ad73a6b9c2)
