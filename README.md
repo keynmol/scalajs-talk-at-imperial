@@ -1,11 +1,22 @@
-Frontend-only thing:
+# Scala.js application
 
-1. npm create vite@latest .
-2. Create `index.js`
-3. Develop frontend 
+This is a simple Scala.js application that I created as supporting material 
+for a presentation at [Imperial College London](https://www.imperial.ac.uk/).
 
-A todo task which shows similar todo items as you type.
+The final app is built on these languages, technologies, and frameworks:
 
-Improvements:
+- Scala parts:
+  - [Scala 3](https://scala-lang.org), specifically Scala 3.4.2
+  - [Scala.js](https://www.scala-js.org)
+  - [Scala CLI](https://scala-cli.virtuslab.org/)
+  - Libraries: [Laminar](https://laminar.dev/) (main UI library), [Upickle](https://com-lihaoyi.github.io/upickle/) for JSON, [Cask](https://com-lihaoyi.github.io/cask/) for HTTP server (**v3** only), [STTP OpenAI](https://github.com/softwaremill/sttp-openai)  for OpenAI API access (**v3** only)
+- Frontend tooling
+  - [Vite](https://vitejs.dev/) for bundling and live reload
+  - [TailwindCSS](https://tailwindcss.com/) for styling
+  - [ECharts](https://echarts.apache.org/en/index.html) (from **v2**) for chart visualisation
+- Deployment
+  - [Fly.io](https://fly.io/) hosting provider
+  - [Docker](https://docs.docker.com/build/building/multi-stage/) for packaging
 
-Create backend which calls openai API to summarise the TODO item description into a single sentence.
+The authors behind those tools and libraries walked so I could at least crawl.
+
