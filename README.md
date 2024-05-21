@@ -12,7 +12,7 @@ for a presentation at [Imperial College London](https://www.imperial.ac.uk/).
 
 Main purpose of presentation was introducing Scala.js and Laminar (see below), showcasing interop features with JavaScript libraries and briefly touching upon packaging and deployment. Final version of an application uses browser storage for data, but has a JVM backend that invokes OpenAI API to generate titles from descriptions. 
 
-[**Live version**](https://scalajs-talk-at-imperial.fly.dev/)
+[**Live version**](https://scalajs-talk-at-imperial.fly.dev/) | [**Slides**](./Scala.js_At_Imperial.pdf)
 
 The final app is built on these languages, technologies, and frameworks:
 
